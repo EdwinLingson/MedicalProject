@@ -8,4 +8,5 @@ public interface DoctorDAO {
 
 	Doctor createDoctor(Doctor doc);
 	List<Doctor> getAll();
+	List<Doctor> getDoctorBySpecialization(String spec);
 }

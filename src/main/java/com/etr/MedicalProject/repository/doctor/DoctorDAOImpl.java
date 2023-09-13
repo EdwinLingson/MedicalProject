@@ -34,4 +34,15 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return null;
 	}
 
+	@Override
+	public List<Doctor> getDoctorBySpecialization(String spec) {
+		Session currSession =entityManager.unwrap(Session.class);
+		Query <Doctor> query = currSession.createQuery("from Doctor d where d.specialization=:spec",Doctor.class);
+		query.setParameter("spec",spec);
+		List<Doctor> list = query.getResultList();
+		if(list.size()>0)
+		return list;
+		return null;
+	}
+
 }
