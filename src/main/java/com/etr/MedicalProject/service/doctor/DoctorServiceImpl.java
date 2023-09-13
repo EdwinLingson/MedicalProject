@@ -1,5 +1,7 @@
 package com.etr.MedicalProject.service.doctor;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,8 +15,11 @@ public class DoctorServiceImpl implements DoctorService {
 	DoctorDAO doctorDAO;
 	@Override
 	public Doctor createDoctor(Doctor doctor) {
-		// TODO Auto-generated method stub
 		return doctorDAO.createDoctor(doctor);
+	}
+	@Override
+	public List<Doctor> getAll() {
+		return doctorDAO.getAll();
 	}
 
 }
