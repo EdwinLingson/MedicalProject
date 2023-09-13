@@ -50,6 +50,8 @@ public class Admin implements Person{
 	public String toString() {
 		return "Admin [username=" + username + ", password=" + password + ", id=" + id + "]";
 	}
+	
+	
 	@Override
 	public boolean authenticate(String username, String password) {
 		if (this.username.equals(username) && this.password.equals(password)) {
