@@ -25,4 +25,10 @@ public class AdminController {
 		Admin addAdmin(@RequestBody Admin admin) {
 			return adminService.createAdmin(admin);
 		}	
+		
+		@PostMapping("/authenticate")
+	    public boolean authenticateAdmin(@RequestBody Admin admin) {
+	        boolean isAuthenticated = admin.authenticate(admin.getUsername(), admin.getPassword());
+	        return isAuthenticated;
+	    }
 	}
