@@ -2,10 +2,11 @@ package com.etr.MedicalProject.entity.doctor;
 
 import java.math.BigDecimal;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
+@Entity
 public class Doctor {
 	
 	@Id
