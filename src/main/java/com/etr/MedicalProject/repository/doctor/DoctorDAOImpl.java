@@ -2,6 +2,8 @@ package com.etr.MedicalProject.repository.doctor;
 
 import java.util.List;
 
+import javax.print.Doc;
+
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,18 @@ public class DoctorDAOImpl implements DoctorDAO {
 		List<Doctor> list = query.getResultList();
 		if(list.size()>0)
 		return list;
+		return null;
+	}
+
+	@Override
+	public Doctor getDoctorByUname(String uname) {
+		Session currSession =entityManager.unwrap(Session.class);
+		Query <Doctor> query = currSession.createQuery("from Doctor u where u.uname ="
+				+ " :uname",Doctor.class);
+		query.setParameter("uname",uname);
+		List<Doctor> list = query.getResultList();
+		if(list.size()>0)
+		return list.get(0);
 		return null;
 	}
 

@@ -2,12 +2,14 @@ package com.etr.MedicalProject.entity.doctor;
 
 import java.math.BigDecimal;
 
+import com.etr.MedicalProject.entity.admin.Person;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 @Entity
-public class Doctor {
+public class Doctor implements Person {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -103,6 +105,11 @@ public class Doctor {
 	}
 	public void setAvailbleTo(String availbleTo) {
 		this.availbleTo = availbleTo;
+	}
+
+	@Override
+	public boolean authenticate(String username, String password) {
+		return this.uname.equals(username) && this.pwd.equals(password);
 	}
 	
 
