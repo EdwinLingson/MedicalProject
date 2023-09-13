@@ -10,11 +10,11 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String gen;
+	private String gender;
 	private int age;
 	private String mNum;
 	private String email;
-	private String hHistory;
+	private String pHistory;
 	private Long apptNum;
 	
 	
@@ -22,16 +22,16 @@ public class User {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public User(Long id, String gen, int age, String mNum, String email, String hHistory, Long apptNum) {
+
+
+	public User(Long id, String gender, int age, String mNum, String email, String pHistory, Long apptNum) {
 		super();
 		this.id = id;
-		this.gen = gen;
+		this.gender = gender;
 		this.age = age;
 		this.mNum = mNum;
 		this.email = email;
-		this.hHistory = hHistory;
+		this.pHistory = pHistory;
 		this.apptNum = apptNum;
 	}
 
@@ -46,13 +46,13 @@ public class User {
 	}
 
 
-	public String getGen() {
-		return gen;
+	public String getGender() {
+		return gender;
 	}
 
 
-	public void setGen(String gen) {
-		this.gen = gen;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
 
@@ -86,13 +86,13 @@ public class User {
 	}
 
 
-	public String gethHistory() {
-		return hHistory;
+	public String getpHistory() {
+		return pHistory;
 	}
 
 
-	public void sethHistory(String hHistory) {
-		this.hHistory = hHistory;
+	public void setpHistory(String pHistory) {
+		this.pHistory = pHistory;
 	}
 
 
@@ -104,7 +104,8 @@ public class User {
 	public void setApptNum(Long apptNum) {
 		this.apptNum = apptNum;
 	}
-
+	
+	
 
 	
 	

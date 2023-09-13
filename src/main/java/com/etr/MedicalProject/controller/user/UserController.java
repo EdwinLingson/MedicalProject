@@ -11,7 +11,7 @@ import com.etr.MedicalProject.entity.user.User;
 import com.etr.MedicalProject.service.user.UserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/usr")
 @CrossOrigin(origins="http://localhost:4200/")
 public class UserController {
 	private final UserService userService;
@@ -21,7 +21,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
