@@ -16,9 +16,9 @@ import com.etr.MedicalProject.service.admin.AdminService;
 @CrossOrigin(origins="http://localhost:4200/")
 public class AdminController {
 
-		@Autowired
-	  AdminService adminService;
-		
+	@Autowired
+	AdminService adminService;
+
 		@PostMapping("/add")
 		Admin addAdmin(@RequestBody Admin admin) {
 			return adminService.createAdmin(admin);
@@ -30,3 +30,4 @@ public class AdminController {
 	        return isAuthenticated;
 	    }
 	}
+
