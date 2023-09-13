@@ -9,4 +9,5 @@ public interface DoctorService {
 
 	Doctor createDoctor(Doctor doctor);
 	List<Doctor> getAll();
+	List<Doctor> getDoctorBySpecialization(long spec);
 }

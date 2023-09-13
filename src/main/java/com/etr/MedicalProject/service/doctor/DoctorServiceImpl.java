@@ -21,5 +21,21 @@ public class DoctorServiceImpl implements DoctorService {
 	public List<Doctor> getAll() {
 		return doctorDAO.getAll();
 	}
+	@Override
+	public List<Doctor> getDoctorBySpecialization(long spec) {
+		// TODO Auto-generated method stub
+		String specialization = getSpec((int)spec);
+		return doctorDAO.getDoctorBySpecialization(specialization);
+	}
+	private String getSpec(int spec) {
+		switch(spec) {
+		case 1: return "Pulmonory";
+		case 2: return "General Medicine";
+		case 3: return "General Surgery";
+		case 4: return "Pediatric";
+		}
+		return null;
+	}
+	
 
 }

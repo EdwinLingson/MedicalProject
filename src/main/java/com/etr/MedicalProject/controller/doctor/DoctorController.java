@@ -31,8 +31,12 @@ public class DoctorController {
 	List<Doctor> getAll(){
 		return doctorService.getAll();
 	}
+	
 	@GetMapping("/getByType/{sp}")
-	List<Doctor> getByType(@PathVariable long s){
-		return doctorService.getAll();
+	List<Doctor> getByType(@PathVariable long sp){
+		return doctorService.getDoctorBySpecialization(sp);
 	}
+	
+	@PostMapping("/authenticate")
+	Doctor authenticate	
 }
