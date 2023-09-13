@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="admin")
-public class Admin {
+public class Admin implements Person{
 	@Id
 	@GeneratedValue(strategy=GenerationType	.IDENTITY)
 	private long id;
@@ -52,6 +52,13 @@ public class Admin {
 	}
 	
 	
+	@Override
+	public boolean authenticate(String username, String password) {
+		if (this.username.equals(username) && this.password.equals(password)) {
+            return true;
+        }
+        return false;
+    }
 	
  
 }

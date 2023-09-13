@@ -2,8 +2,6 @@ package com.etr.MedicalProject.controller.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +18,16 @@ public class AdminController {
 
 	@Autowired
 	AdminService adminService;
+
+		@PostMapping("/add")
+		Admin addAdmin(@RequestBody Admin admin) {
+			return adminService.createAdmin(admin);
+		}	
 		
-	@PostMapping("/add")
-	Admin addAdmin(@RequestBody Admin admin) {
-		return adminService.createAdmin(admin);
-	}	
-}
+		@PostMapping("/authenticate")
+	    public boolean authenticateAdmin(@RequestBody Admin admin) {
+	        boolean isAuthenticated = admin.authenticate(admin.getUsername(), admin.getPassword());
+	        return isAuthenticated;
+	    }
+	}
+
