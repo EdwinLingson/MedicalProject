@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.etr.MedicalProject.entity.doctor.Doctor;
+import com.etr.MedicalProject.repository.model.UserAuth;
 import com.etr.MedicalProject.service.doctor.DoctorService;
 
 @RequestMapping("/dr")
@@ -38,5 +39,7 @@ public class DoctorController {
 	}
 	
 	@PostMapping("/authenticate")
-	Doctor authenticate	
+	UserAuth authenticate(@RequestBody Doctor doctor) {
+		return doctorService.authenticate(doctor);
+	}
 }

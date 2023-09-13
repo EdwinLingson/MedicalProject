@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.etr.MedicalProject.entity.doctor.Doctor;
 import com.etr.MedicalProject.repository.doctor.DoctorDAO;
+import com.etr.MedicalProject.repository.model.UserAuth;
 
 @Service
 public class DoctorServiceImpl implements DoctorService {
@@ -35,6 +36,22 @@ public class DoctorServiceImpl implements DoctorService {
 		case 4: return "Pediatric";
 		}
 		return null;
+	}
+	@Override
+	public UserAuth authenticate(Doctor doctor) {
+		UserAuth retObj = new UserAuth();
+		Doctor realDr = getDoctorbyUsername(doctor.getUname());
+		if(realDr==null)return retObj;
+		
+		retObj.setId(realDr.getId());
+		retObj.setSuccess(realDr.authenticate(doctor.getUname(), doctor.getPwd()));
+		return retObj;
+	}
+	
+	private Doctor getDoctorbyUsername(String uname) {
+		Doctor dr = doctorDAO.getDoctorByUname(uname);
+		
+		return dr;
 	}
 	
 
