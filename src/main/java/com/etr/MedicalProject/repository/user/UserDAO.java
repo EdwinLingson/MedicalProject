@@ -7,6 +7,8 @@ import com.etr.MedicalProject.entity.user.User;
 public interface UserDAO {
 
 	User createUser(User user);
+	//User getUser(long id);
+	User getUserDetailsByApptNameAndUserId(String apptname, Long userId);
 
-//    List<User> getAllUsers();
+
 }
