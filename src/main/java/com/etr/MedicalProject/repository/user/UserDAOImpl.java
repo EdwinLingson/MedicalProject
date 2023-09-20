@@ -30,7 +30,7 @@ public class UserDAOImpl implements UserDAO {
 	    
 	    public User getUserDetailsByApptNameAndUserId(String apptname, Long userId) {
 	        Session session = entityManager.unwrap(Session.class);
-	        String query = "FROM User u WHERE u.apptname = :apptname AND u.id = :userId";
+	        String query = "FROM User u WHERE u.apptNum = :apptname AND u.id = :userId";
 	        return (User) session.createQuery(query)
 	                .setParameter("apptname", apptname)
 	                .setParameter("userId", userId)
