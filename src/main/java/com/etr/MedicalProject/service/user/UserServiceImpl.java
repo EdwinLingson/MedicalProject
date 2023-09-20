@@ -17,7 +17,16 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return (User)userDAO.createUser(user);
 	}
-	
+
+	@Override
+	public User getUserDetailsByApptNameAndUserId(String apptname, Long userId) {
+		// TODO Auto-generated method stub
+		return userDAO.getUserDetailsByApptNameAndUserId(apptname, userId);
+   
+	}
+
+
+
 	
 
 }
