@@ -10,6 +10,7 @@ public class User {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private String name;
 	private String gender;
 	private int age;
 	private String mNum;
@@ -23,10 +24,11 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 
-
-	public User(Long id, String gender, int age, String mNum, String email, String pHistory, Long apptNum) {
+	public User(Long id, String name, String gender, int age, String mNum, String email, String pHistory,
+			Long apptNum) {
 		super();
 		this.id = id;
+		this.name = name;
 		this.gender = gender;
 		this.age = age;
 		this.mNum = mNum;
@@ -35,6 +37,13 @@ public class User {
 		this.apptNum = apptNum;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Long getId() {
 		return id;

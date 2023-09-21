@@ -53,6 +53,11 @@ public class DoctorServiceImpl implements DoctorService {
 		
 		return dr;
 	}
+	@Override
+	public Doctor getDoctor(long id) {
+		
+		return doctorDAO.get(id);
+	}
 	
 
 }
