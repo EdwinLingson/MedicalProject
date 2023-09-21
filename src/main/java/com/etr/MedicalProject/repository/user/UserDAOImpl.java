@@ -37,6 +37,13 @@ public class UserDAOImpl implements UserDAO {
 	                .uniqueResult();
 	    }
 
+		@Override
+		public User updateUser(User user) {
+			Session currSession=entityManager.unwrap(Session.class);
+		       currSession.update(user);
+		       return currSession.get(User.class, user.getId());
+		}
+
 
 
 

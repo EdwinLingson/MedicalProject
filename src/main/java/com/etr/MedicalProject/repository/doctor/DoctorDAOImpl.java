@@ -59,4 +59,10 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return null;
 	}
 
+	@Override
+	public Doctor get(long id) {
+		Session currSession =entityManager.unwrap(Session.class);
+		return currSession.get(Doctor.class,id);
+	}
+
 }

@@ -32,6 +32,10 @@ public class DoctorController {
 	List<Doctor> getAll(){
 		return doctorService.getAll();
 	}
+	@GetMapping("/get/{id}")
+	Doctor get(@PathVariable long id){
+		return doctorService.getDoctor(id);
+	}
 	
 	@GetMapping("/getByType/{sp}")
 	List<Doctor> getByType(@PathVariable long sp){

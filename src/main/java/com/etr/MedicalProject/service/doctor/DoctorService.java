@@ -10,6 +10,7 @@ public interface DoctorService {
 
 	Doctor createDoctor(Doctor doctor);
 	List<Doctor> getAll();
+	Doctor getDoctor(long id);
 	List<Doctor> getDoctorBySpecialization(long spec);
 	UserAuth authenticate(Doctor doctor);
 }
