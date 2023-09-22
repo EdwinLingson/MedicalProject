@@ -31,4 +31,10 @@ public class AppointmentController {
     public List<Appointment> getAllAppointments() {
         return appointmentService.findAll();
     }
+    @GetMapping("/byDoctor/{dId}")
+    public List<Appointment> getAppointmentsForDoctor(@PathVariable long dId) {
+    	System.out.println(dId);
+        return appointmentService.appointmentsForDoctor(dId);
+    }
+    
 }

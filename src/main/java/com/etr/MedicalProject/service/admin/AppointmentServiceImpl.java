@@ -63,4 +63,11 @@ public class AppointmentServiceImpl implements AppointmentService {
 		inAppointment.setUser(userService.updateUser(inAppointment.getUser()));
 		return inAppointment;
 	}
+
+	@Override
+	public List<Appointment> appointmentsForDoctor(long dId) {
+		return appointmentRepository.findAll().stream()
+				.filter(e->e.getDoctorId()==dId)
+				.toList();
+	}
 }
