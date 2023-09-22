@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import com.etr.MedicalProject.entity.admin.Appointment;
+import com.etr.MedicalProject.repository.model.InAppointment;
 import com.etr.MedicalProject.service.admin.AppointmentService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/appointments")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class AppointmentController {
 
     @Autowired
@@ -19,6 +20,11 @@ public class AppointmentController {
     @PostMapping("/add")
     public Appointment addAppointment(@RequestBody Appointment appointment) {
         return appointmentService.save(appointment);
+    }
+    
+    @PostMapping("/create")	
+    public InAppointment createAppointment(@RequestBody InAppointment appointment) {
+        return appointmentService.createAppointment(appointment);
     }
 
     @GetMapping("/all")

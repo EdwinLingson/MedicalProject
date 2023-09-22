@@ -9,6 +9,7 @@ public interface UserDAO {
 	User createUser(User user);
 	//User getUser(long id);
 	User getUserDetailsByApptNameAndUserId(String apptname, Long userId);
+	User updateUser(User user);
 
 
 }
