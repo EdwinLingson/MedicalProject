@@ -9,6 +9,7 @@ public interface AppointmentService {
     List<Appointment> getAllAppointments();
 	Appointment save(Appointment appointment);
 	List<Appointment> findAll();
+	List<Appointment> appointmentsForDoctor(long dId);
 	InAppointment createAppointment(InAppointment inAppointment);
 
 }
