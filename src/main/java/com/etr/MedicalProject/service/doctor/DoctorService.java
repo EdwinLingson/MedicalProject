@@ -12,4 +12,5 @@ public interface DoctorService {
 	List<Doctor> getAll();
 	List<Doctor> getDoctorBySpecialization(long spec);
 	UserAuth authenticate(Doctor doctor);
+	Doctor updateDoctor(Long id, Doctor updatedDoctor);
 }

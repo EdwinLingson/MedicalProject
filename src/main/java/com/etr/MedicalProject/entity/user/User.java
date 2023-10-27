@@ -104,11 +104,4 @@ public class User {
 	public void setApptNum(Long apptNum) {
 		this.apptNum = apptNum;
 	}
-	
-	
-
-	
-	
-	
-
 }

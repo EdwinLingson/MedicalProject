@@ -54,5 +54,29 @@ public class DoctorServiceImpl implements DoctorService {
 		return dr;
 	}
 	
+	@Override
+	public Doctor updateDoctor(Long id, Doctor updatedDoctor) {
+	    Doctor existingDoctor = doctorDAO.getDoctorById(id);
+
+	    if (existingDoctor != null) {
+	        
+	        existingDoctor.setName(updatedDoctor.getName());
+	        existingDoctor.setSpecialization(updatedDoctor.getSpecialization());
+	        existingDoctor.setFee(updatedDoctor.getFee());
+	        existingDoctor.setExperience(updatedDoctor.getExperience());
+	        existingDoctor.setGender(updatedDoctor.getGender());
+	        existingDoctor.setAvailbleFrom(updatedDoctor.getAvailbleFrom());
+	        existingDoctor.setAvailbleTo(updatedDoctor.getAvailbleTo());
+	        existingDoctor.setUname(updatedDoctor.getUname());
+	        existingDoctor.setPwd(updatedDoctor.getPwd());
+
+	        return doctorDAO.updateDoctor(existingDoctor);
+	    }
+
+	   
+	    return null;
+	}
+
+
 
 }

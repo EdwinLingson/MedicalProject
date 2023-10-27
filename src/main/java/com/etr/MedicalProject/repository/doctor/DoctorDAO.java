@@ -10,4 +10,6 @@ public interface DoctorDAO {
 	List<Doctor> getAll();
 	List<Doctor> getDoctorBySpecialization(String spec);
 	Doctor getDoctorByUname(String uname);
+	Doctor updateDoctor(Doctor doctor);
+	Doctor getDoctorById(Long id);
 }

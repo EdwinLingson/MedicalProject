@@ -58,5 +58,15 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return list.get(0);
 		return null;
 	}
-
+	 @Override
+	    public Doctor updateDoctor(Doctor doctor) {
+	        Session currSession = entityManager.unwrap(Session.class);
+	        currSession.update(doctor); 
+	        return doctor; 
+	    }
+	 @Override
+	 public Doctor getDoctorById(Long id) {
+	     Session currSession = entityManager.unwrap(Session.class);
+	     return currSession.get(Doctor.class, id);
+	 }
 }
